@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHASKY EXPRESS - Panel de Control</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">CHASKY EXPRESS</a></div>
+            <ul class="nav-links">
+                <li><a href="#envios">Mis Envíos</a></li>
+                <li><a href="#nuevo">Nuevo Envío</a></li>
+                <li><a href="#perfil">Mi Perfil</a></li>
+                <li><button id="logoutBtn" class="logout-button">Cerrar Sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="welcome-section">
+            <h1>Bienvenido a tu Panel de Control</h1>
+            <p id="userEmail"></p>
+        </div>
+
+        <section id="envios" class="dashboard-section">
+            <h2>Mis Envíos Activos</h2>
+            <div class="shipments-grid">
+                <div class="shipment-card">
+                    <h3>Envío #12345</h3>
+                    <p>Estado: En Tránsito</p>
+                    <p>Destino: Lima, Perú</p>
+                    <button class="track-button">Rastrear</button>
+                </div>
+                <!-- More shipment cards would be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="nuevo" class="dashboard-section">
+            <h2>Crear Nuevo Envío</h2>
+            <form id="newShipmentForm" class="shipment-form">
+                <div class="form-group">
+                    <label for="origen">Origen</label>
+                    <input type="text" id="origen" required>
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo de Envío</label>
+                    <select id="tipo" required>
+                        <option value="express">Express</option>
+                        <option value="regular">Regular</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button">Crear Envío</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+:root {
+    --red-color: #E31837;
+    --white-color: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--white-color);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--red-color);
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Add padding to body to account for fixed header */
+body {
+    padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}
+
+.logo {
+    color: var(--white-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a:hover {
+    color: rgba(255,255,255,0.8);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--red-color);
+    color: var(--white-color);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards 0.3s;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background-color: var(--white-color);
+    color: var(--red-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Services Section */
+.services {
+    padding: 4rem 2rem;
+    background-color: var(--white-color);
+}
+
+.services h2 {
+    text-align: center;
+    color: var(--red-color);
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid var(--red-color);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: var(--red-color);
+    margin-bottom: 1rem;
+}
+
+/* Tracking Section */
+.tracking {
+    background-color: var(--red-color);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.tracking h2 {
+    color: var(--white-color);
+    margin-bottom: 2rem;
+}
+
+.tracking-form input {
+    padding: 0.8rem;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.tracking-form button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--white-color);
+    color: var(--red-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tracking-form button:hover {
+    background-color: rgba(255,255,255,0.9);
+}
+
+/* Footer */
+footer {
+    background-color: var(--red-color);
+    color: var(--white-color);
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--white-color);
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card p {
+    color: #333;
+    line-height: 1.6;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+.about {
+    padding: 4rem 2rem;
+    background-color: var(--white-color);
+}
+
+.about h2 {
+    text-align: center;
+    color: var(--red-color);
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text {
+    line-height: 1.6;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    color: #333;
+}
+
+.about-text ul {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    color: #333;
+}
+
+.about-text ul li {
+    margin-bottom: 0.5rem;
+}
+
+.contact {
+    padding: 4rem 2rem;
+    background-color: var(--white-color);
+}
+
+.contact h2 {
+    text-align: center;
+    color: var(--red-color);
+    margin-bottom: 3rem;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-item h3 {
+    color: var(--red-color);
+    margin-bottom: 1rem;
+}
+
+.whatsapp-button, .email-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: var(--white-color);
+    border: 2px solid var(--red-color);
+    border-radius: 8px;
+    color: var(--red-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover, .email-button:hover {
+    background-color: var(--red-color);
+    color: var(--white-color);
+    transform: translateY(-3px);
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        gap: 1.5rem;
+    }
+    
+    .whatsapp-button, .email-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
