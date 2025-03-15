@@ -66,14 +66,49 @@ nav {
     gap: 2rem;
 }
 
+/* Adjust nav links size and spacing */
 .nav-links a {
     color: var(--white-color);
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem;  /* Reduced padding */
     border-radius: 4px;
+    font-size: 0.9rem;      /* Smaller font size */
 }
 
+/* Adjust section spacing */
+.services {
+    padding: 2rem 2rem;     /* Reduced padding */
+}
+
+.about {
+    padding: 2rem 2rem 1rem; /* Reduced padding */
+}
+
+.contact {
+    padding: 1rem 2rem 2rem; /* Reduced padding */
+}
+
+/* Adjust section headings */
+.services h2,
+.about h2,
+.contact h2 {
+    margin-bottom: 1.5rem;   /* Reduced margin */
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .nav-links a {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .services,
+    .about,
+    .contact {
+        padding: 1.5rem 1rem;
+    }
+}
 .nav-links a.active {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -92,26 +127,40 @@ nav {
 .hero {
     background-color: var(--red-color);
     color: var(--white-color);
-    padding: 4rem 2rem;
+    padding: 2rem 1rem;  /* Reduced padding */
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;     /* Reduced font size */
+    margin-bottom: 0.5rem; /* Reduced margin */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s forwards;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;     /* Reduced font size */
+    margin-bottom: 1rem;  /* Reduced margin */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s forwards 0.3s;
 }
 
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 1.5rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
 .cta-button {
     padding: 1rem 2rem;
     background-color: var(--white-color);
@@ -293,18 +342,39 @@ footer {
 
 .contact-info {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
     align-items: center;
 }
 
 .contact-item {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .contact-item h3 {
     color: var(--red-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+}
+
+.contact-item h3::after {
+    content: ":";
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .contact-item {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 .whatsapp-button, .email-button {
