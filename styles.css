@@ -364,7 +364,12 @@ footer {
 
 /* Responsive Styles */
 /* Mobile Navigation Styles */
+/* Mobile specific styles */
 @media screen and (max-width: 768px) {
+    body.menu-open {
+        overflow: hidden;
+    }
+
     .nav-links {
         position: fixed;
         top: 70px;
@@ -373,9 +378,11 @@ footer {
         height: calc(100vh - 70px);
         background-color: var(--red-color);
         flex-direction: column;
+        align-items: center;
         padding: 2rem;
         transition: 0.3s ease-in-out;
-        z-index: 999;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-links.active {
@@ -384,63 +391,69 @@ footer {
 
     .nav-links li {
         width: 100%;
-        text-align: center;
-        margin: 1rem 0;
+        margin: 0.5rem 0;
     }
 
     .nav-links a {
         display: block;
         padding: 1rem;
-        font-size: 1.1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .login-button {
-        margin-top: 1rem;
-        width: 100%;
         text-align: center;
+        font-size: 1.1rem;
+        width: 100%;
     }
 
-    .menu-toggle {
+    .service-cards {
+        padding: 0 1rem;
+    }
+
+    .tracking-form {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        z-index: 1000;
-        padding: 10px;
+        gap: 1rem;
+        padding: 0 1rem;
     }
 
-    .menu-toggle span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        transition: 0.3s;
+    .tracking-form input {
+        width: 100%;
+        margin-right: 0;
     }
 
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+    .hero {
+        padding: 2rem 1rem;
     }
 
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
-
-@media screen and (max-width: 480px) {
     .hero h1 {
         font-size: 1.8rem;
     }
 
-    .service-card {
-        padding: 1.5rem;
+    .hero p {
+        font-size: 1rem;
     }
 
-    .about-text {
+    .service-card {
+        margin: 1rem;
+    }
+
+    .contact-content {
         padding: 0 1rem;
+    }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-links a {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .service-card {
+        padding: 1rem;
+    }
+
+    .tracking-form button {
+        width: 100%;
     }
 }
