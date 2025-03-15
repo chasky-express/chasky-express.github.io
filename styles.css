@@ -363,67 +363,71 @@ footer {
 }
 
 /* Responsive Styles */
+/* Mobile Navigation Styles */
 @media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
     .nav-links {
-        display: none;
-        position: absolute;
+        position: fixed;
         top: 70px;
-        left: 0;
+        left: -100%;
         width: 100%;
+        height: calc(100vh - 70px);
         background-color: var(--red-color);
         flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
+        padding: 2rem;
+        transition: 0.3s ease-in-out;
+        z-index: 999;
     }
 
     .nav-links.active {
-        display: flex;
+        left: 0;
     }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .service-cards {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .tracking-form {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-
-    .tracking-form input {
+    .nav-links li {
         width: 100%;
-        margin-right: 0;
+        text-align: center;
+        margin: 1rem 0;
     }
 
-    .contact-content {
-        padding: 0 1rem;
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .whatsapp-button, .email-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
+    .login-button {
+        margin-top: 1rem;
+        width: 100%;
         text-align: center;
     }
 
-    .social-links {
-        justify-content: center;
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1000;
+        padding: 10px;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 
