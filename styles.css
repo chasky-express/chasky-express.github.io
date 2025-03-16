@@ -69,16 +69,27 @@ nav {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    background-color: var(--red-color);
+    background-color: transparent;  /* Changed from var(--red-color) to transparent */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
 
+header {
+    background-color: transparent;  /* Changed from var(--red-color) to transparent */
+    padding: 1rem;
+    box-shadow: none;  /* Removed the shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
 .logo {
     font-size: 1.5rem;
-    color: var(--white-color);
+    color: var(--red-color);  /* Changed from var(--white-color) to var(--red-color) */
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -177,15 +188,34 @@ nav {
 .nav-links a:hover {
     color: rgba(255,255,255,0.8);
 }
-
 /* Hero Section */
 .hero {
-    background-color: var(--red-color);
-    color: var(--white-color);
-    padding: 2rem 1rem;  /* Reduced padding */
+    background-color: transparent;  /* Changed from var(--red-color) to transparent */
+    color: var(--red-color);       /* Changed from var(--white-color) to var(--red-color) */
+    padding: 2rem 1rem;
     text-align: center;
 }
 
+/* Navigation links */
+.nav-links a {
+    color: var(--red-color);       /* Changed from var(--white-color) to var(--red-color) */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: rgba(227, 24, 55, 0.8); /* Changed to semi-transparent red */
+    background-color: rgba(227, 24, 55, 0.1);
+}
+
+.nav-links a.active {
+    background-color: rgba(227, 24, 55, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
 .hero h1 {
     font-size: 2rem;     /* Reduced font size */
     margin-bottom: 0.5rem; /* Reduced margin */
@@ -229,17 +259,28 @@ nav {
 
 /* Services Section */
 .services {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;  /* Reduced from 4rem to 2rem */
     background-color: var(--white-color);
 }
 
 .services h2 {
     text-align: center;
     color: var(--red-color);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;  /* Reduced from 3rem to 2rem */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s forwards;
+}
+
+/* About Section */
+.about {
+    padding: 2rem 2rem 1rem;  /* Reduced from 4rem to 2rem */
+    text-align: center;
+}
+
+.about h2 {
+    color: var(--red-color);
+    margin-bottom: 1.5rem;  /* Reduced from 2rem to 1.5rem */
 }
 
 .service-cards {
