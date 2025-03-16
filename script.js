@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll tracking for nav links
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
 
+    // Handle scroll events for active nav links
     window.addEventListener('scroll', () => {
         let current = '';
         
@@ -22,22 +25,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Mobile menu functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-    
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+    // Mobile menu toggle
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinksContainer.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinksContainer.classList.remove('active');
         });
-    
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navLinksContainer.contains(e.target)) {
+            menuToggle.classList.remove('active');
+            navLinksContainer.classList.remove('active');
+        }
     });
 });
