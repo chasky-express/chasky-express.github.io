@@ -1,49 +1,49 @@
+// Navegación móvil
 document.addEventListener('DOMContentLoaded', function() {
-    // Scroll tracking for nav links
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinksContainer = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-    // Handle scroll events for active nav links
-    window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute('id');
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Manejo del formulario de login
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Aquí puedes agregar la lógica de autenticación
+            console.log('Intento de inicio de sesión:', { username, password });
+            // Simular autenticación
+            alert('Inicio de sesión exitoso');
+        });
+    }
+
+    // Manejo del formulario de contacto
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensaje enviado correctamente');
+            contactForm.reset();
+        });
+    }
+
+    // Animación suave del scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
         });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Mobile menu toggle
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinksContainer.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navLinksContainer.classList.remove('active');
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !navLinksContainer.contains(e.target)) {
-            menuToggle.classList.remove('active');
-            navLinksContainer.classList.remove('active');
-        }
     });
 });

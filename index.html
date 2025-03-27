@@ -2,91 +2,101 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CHASKY EXPRESS - Servicios de Mensajería y Paqueteria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasky Express Perú</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">CHASKY EXPRESS</div>
-            <div class="menu-toggle">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Chasky Express Logo">
+                <span>CHASKY EXPRESS</span>
+            </div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#cobertura">Cobertura</a>
+                <a href="#contacto">Contacto</a>
+                <a href="login.html" class="login-btn">Iniciar Sesión</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
                 <span></span>
             </div>
-            <ul class="nav-links">
-                <li><a href="login.html" class="login-button">Iniciar Sesión</a></li>
-            </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Servicios de Mensajería Rápidos y Confiables</h1>
-            <p>Tu socio de confianza en soluciones de entrega de cualquier paquetes y/o documentos</p>
-        </div>
-    </section>
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Envíos rápidos y seguros</h1>
+                <p>Tu mejor opción en servicios de courier</p>
+                <a href="#servicios" class="cta-button">Nuestros Servicios</a>
+            </div>
+        </section>
 
-    <section id="services" class="services">
-        <h2>SERVICIOS</h2>
-        <div class="service-cards">
-            <div class="service-item">
-                <i class="fas fa-shipping-fast"></i>
-                <h3>Entrega Express</h3>
-                <p>En nuestro servicio de entrega express, nos comprometemos a llevar tus pedidos a su destino de manera rápida y segura. Garantizamos que tus productos lleguen en el menor tiempo posible, sin comprometer la calidad del servicio.</p>
+        <section id="servicios" class="services">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Envíos a todo Lima Metropolitana y Callao</h3>
+                    <p>Entregas a todo el Perú</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-box"></i>
+                    <h3>Servicios para e-commerce</h3>
+                    <p>Todo tipo de paquetes</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Servicio de Recojo y Entrega </h3>
+                    <p>Son servicios que se entregan el mismo dia</p>
+                </div>
             </div>
-            <div class="service-item">
-                <i class="fas fa-truck"></i>
-                <h3>Envíos Regulares</h3>
-                <p>En nuestro servicio de envíos regulares, nos enfocamos en brindarte un proceso eficiente y confiable. Las recogidas de paquetes se realizan durante la mañana, permitiéndonos organizar y procesar tus envíos con cuidado.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-warehouse"></i>
-                <h3>Almacenamiento</h3>
-                <p>Ofrecemos un servicio de almacenaje diseñado especialmente para negocios de e-commerce para garantizar el control de inventario, la protección de tus productos y la rápida preparación de pedidos.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-       <section id="about" class="about">
-        <h2>Nosotros</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>En CHASKY EXPRESS, nos especializamos en brindar soluciones logísticas integrales para el comercio electrónico. Con más de 5 años de experiencia en el mercado, hemos desarrollado un sistema eficiente que combina tecnología de punta con un equipo humano altamente capacitado.</p>
-                <p>Nuestra misión es ser el aliado estratégico que tu e-commerce necesita, ofreciendo:</p>
-                <ul class="features-list">
-                    <li><i class="fas fa-shipping-fast"></i> Entregas rápidas y puntuales</li>
-                    <li><i class="fas fa-map-marked-alt"></i> Cobertura en toda la ciudad</li>
-                    <li><i class="fas fa-headset"></i> Atención personalizada</li>
-                    <li><i class="fas fa-warehouse"></i> Soluciones de almacenamiento</li>
-                </ul>
-                <p>Nos enorgullece ser parte del crecimiento de numerosos negocios digitales, adaptando nuestros servicios a sus necesidades específicas y contribuyendo a su éxito en el mercado online.</p>
+        <section id="cobertura" class="coverage">
+            <h2>Cobertura Lima y Callao</h2>
+            <div class="map-container">
+                <img src="peru-map.png" alt="Mapa de cobertura">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Remove this extra closing section tag -->
-    <!-- </section> -->
+        <section id="contacto" class="contact">
+            <h2>Contáctanos</h2>
+            <div class="contact-container">
+                <form id="contact-form">
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <textarea placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Contáctanos</h3>
-                <p>Correo: erwinperu2023@gmail.com</p>
-                <p>Teléfono: (+51) 953152449</p>
+                <h4>Chasky Express Perú</h4>
+                <p>Av. Precursores 972, San Miguel</p>
+                <p>Teléfono: 953152449</p>
             </div>
             <div class="footer-section">
-                <h3>Síguenos</h3>
+                <h4>Síguenos</h4>
                 <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 CHASKY EXPRESS. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Chasky Express Perú. Todos los derechos reservados.</p>
         </div>
     </footer>
 
